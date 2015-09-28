@@ -1,4 +1,3 @@
-#include <iostream>
 #include "cpp-integration/connector.hh"
 
 int main() {
@@ -6,10 +5,12 @@ int main() {
   using Profiling::Node;
   using Profiling::NodeStatus;
 
+  /// Instansiate a Connector with 6565 as port
   Profiling::Connector c(6565);
   c.connect();
 
-  c.restart(-1, "test example");
+  /// Starting a new tree (also used in case of a restart)
+  c.restart("minimal example");
 
   /// First two nodes are constructed
   /// and sent in one line each
